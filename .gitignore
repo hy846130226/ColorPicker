@@ -1,9 +1,19 @@
-﻿################################################################################
-# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
-################################################################################
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
 
-/.vs/ColorPicker/FileContentIndex
-/ColorPicker/bin/Debug/net6.0-windows
-/ColorPicker/obj
-/.vs/ColorPicker/v17
-/ColorPicker/bin/Release/net6.0-windows
+# PyInstaller
+build/
+dist/
+
+# App config
+config.json
+
+# IDE
+.vs/
+.idea/
+
+# Claude
+/CLAUDE.md
