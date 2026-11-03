@@ -15,6 +15,7 @@ FG = "white"
 BORDER = "#555555"
 MAX_CHANNEL = 255
 HEX_DIGITS = 6
+ENTRY_STATE_READONLY = "readonly"
 
 
 class ColorPickerApp:
@@ -122,7 +123,7 @@ class ColorPickerApp:
                 insertbackground=FG,
                 relief="flat",
                 font=("Consolas", 10),
-                state="readonly",
+                state=ENTRY_STATE_READONLY,
             )
             entry.grid(row=row, column=1, sticky="ew", pady=2, padx=(0, 8))
             entry.bind("<KeyRelease>", self._on_entry_changed)
@@ -170,7 +171,7 @@ class ColorPickerApp:
             self._stop_sampling()
             self._set_entries_state(tk.NORMAL)
         else:
-            self._set_entries_state(tk.READONLY)
+            self._set_entries_state(ENTRY_STATE_READONLY)
             self._start_sampling()
 
     def _set_entries_state(self, state: str) -> None:
